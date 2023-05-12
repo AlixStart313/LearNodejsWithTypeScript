@@ -16,13 +16,14 @@ export const getUser= (req:Request,res:Response)=>{
 }
 
 
-export const postUser  = (req: Request,res : Response)=>{
+export const postUser  = (req:Request,res:Response)=>{
     const {body} = req;
 
     res.json({
         msg:'postUser',
-        body
+        body:body
     })
+    
 }
 
 export const putUser  = (req: Request,res : Response)=>{
