@@ -2,12 +2,14 @@ import express,{Application} from "express";
 import userRouter from "../routes/usersRoutes";
 import  cors  from 'cors'
 import Connection from './../utils/connection';
+import Pool from "./../utils/postgreSQLConection";
 
 
 //import * as userRoutes from "../routes/usersRoutes";
 //exporta todo el paquete y sera almacenado con ese nombre
 
 const connection = new Connection();
+const pool = new Pool();
 class Server{
     private app: Application;
     private port: string;
