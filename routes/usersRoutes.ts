@@ -1,5 +1,6 @@
 import {Router} from 'express';
-import { getUser, getUsers, postUser, putUser,deleteUser,enableOPrDisableUser } from '../controllers/usersController';
+//import { getUser, getUsers, postUser, putUser,deleteUser,enableOPrDisableUser } from '../controllers/usersController';
+import { getUser, getUsers, postUser, putUser,deleteUser,enableOPrDisableUser } from '../controllers/psUsersControllers';
  
 const router = Router();
 

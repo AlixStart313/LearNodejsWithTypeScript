@@ -1,11 +1,12 @@
 import express,{Application} from "express";
-import userRouter from "../routes/usersRoutes";
 import  cors  from 'cors'
+import userRouter from "../routes/usersRoutes";
 import Connection from './../utils/connection';
 import Pool from "./../utils/postgreSQLConection";
 
 
 //import * as userRoutes from "../routes/usersRoutes";
+import poolConnection from '../utils/postgreSQLConection';
 //exporta todo el paquete y sera almacenado con ese nombre
 
 const connection = new Connection();
@@ -23,7 +24,8 @@ class Server{
 
         this.middlewares();
         //definimos las rutas
-        this.DBConnection();
+       //this.DBConnection();
+       this.PSConnection();
         this.routes();
         
         
@@ -45,17 +47,15 @@ class Server{
         })
     }
 
-    async DBConnection() {
-        try {
-          const db = connection.connectionDB().authenticate();
-          console.log('Database is connected and working...');
     
-        } catch (e) {
-            throw new Error(String(e));
-            console.error(e);
-          
-        }
-      }
+
+    PSConnection(){
+        const psDB =  pool.Authentication();
+        console.log(psDB);  
+    }
+        
+    
+   
 }
 
 
